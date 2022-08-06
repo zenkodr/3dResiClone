@@ -39,13 +39,20 @@ public class PlayerMovement : MonoBehaviour
 
     void MyInput()
     {
+
+        //Horizontal Y axis
         horizontalInput = Input.GetAxisRaw("Horizontal");
+
+        //Vertical X axis 
+
+        //Need to add tank controls so rotation + movement forward or backwards
         verticalInput = Input.GetAxisRaw("Vertical");
     }
 
 
     private void MoveFunc()
     {
+        //Definetly going to change 
         moveDirections = orientation.forward * verticalInput + orientation.right * horizontalInput;
         rb.AddForce(moveDirections.normalized * movementSpeed * 10f, ForceMode.Force);
 
